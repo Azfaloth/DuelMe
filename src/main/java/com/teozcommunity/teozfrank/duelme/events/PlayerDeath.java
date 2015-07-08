@@ -12,6 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
 
 import java.util.UUID;
 
@@ -44,7 +47,7 @@ public class PlayerDeath implements Listener {
             }
 
             if(e.getEntity().getKiller() instanceof Player){
-                Player killer = e.getEntity().getKiller();
+                final Player killer = e.getEntity().getKiller();
                 String killerName = killer.getName();
                 double x = -523.5;
                 double y = 67.0;

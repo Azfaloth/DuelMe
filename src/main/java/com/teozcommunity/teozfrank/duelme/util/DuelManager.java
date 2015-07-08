@@ -631,8 +631,8 @@ public class DuelManager {
 
 
         try {
-            ItemStack[] arm = playerData.getArmour();
-            ItemStack[] inv = playerData.getInventory();
+            //ItemStack[] arm = playerData.getArmour();
+            //ItemStack[] inv = playerData.getInventory();
             Location loc = playerData.getLocaton();
             Float saturation = playerData.getSaturation();
             int foodLevel = playerData.getFoodLevel();
@@ -643,7 +643,7 @@ public class DuelManager {
                 SendConsoleMessage.info("Player location for player: " + player.getName() + ":" + loc);
             }
 
-            player.teleport(loc);
+            //player.teleport(loc);
 
 
             if (plugin.isUsingSeperatedInventories()) {

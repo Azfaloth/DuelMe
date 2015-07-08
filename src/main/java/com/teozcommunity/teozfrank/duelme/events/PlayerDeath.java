@@ -71,7 +71,6 @@ public class PlayerDeath implements Listener {
                 e.setDeathMessage(fm.getPrefix() + ChatColor.AQUA + player.getName() + ChatColor.RED + " was killed in a duel!");
             }
             dm.endDuel(player);
-            player.spigot().respawn();
         }
     }
 

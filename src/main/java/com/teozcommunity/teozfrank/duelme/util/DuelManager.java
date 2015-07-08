@@ -648,8 +648,8 @@ public class DuelManager {
 
             if (plugin.isUsingSeperatedInventories()) {
                 player.getInventory().clear(-1, -1);// clear their inventory completely
-                player.getInventory().setContents(inv);
-                player.getInventory().setArmorContents(arm);
+                //player.getInventory().setContents(inv);
+                //player.getInventory().setArmorContents(arm);
             }
             player.setSaturation(saturation);
             player.setFoodLevel(foodLevel);

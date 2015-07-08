@@ -46,6 +46,21 @@ public class PlayerDeath implements Listener {
             if(e.getEntity().getKiller() instanceof Player){
                 Player killer = e.getEntity().getKiller();
                 String killerName = killer.getName();
+                double x = -523.5;
+                double y = 67.0;
+                double z = 179.5;
+                final World w = Bukkit.getWorld("world");
+                final Location def = new Location(w, x, y, z);
+                def.setYaw((float) 90.0);
+                def.setPitch((float) 0.0);
+                this.plugin.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
+                {
+                  public void run()
+                  {
+                    killer.teleport(def);
+                    killer.sendMessage(ChatColor.GOLD + "You have been teleported to the server spawn");
+                  }
+                }, 1L);
                 if(fm.isMySqlEnabled()) {
                     mySql.addPlayerKillDeath(playerUUID, killerName, FieldName.KILL);
                 }
@@ -54,6 +69,7 @@ public class PlayerDeath implements Listener {
                     if(plugin.isDebugEnabled()) {
                         SendConsoleMessage.debug("Item drops disabled, clearing.");
                     }
+                    e.setKeepInventory(true);
                     e.getDrops().clear();
                 }
 
